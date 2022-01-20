@@ -1,0 +1,26 @@
+<div class="divv" style="border-top: 1px solid #d1d1d1">
+<div>
+<button type="button" class="button" data-trigger="trigger">
+    <span data-bind="i18n: 'Click Here'"></span>
+</button>
+</div>
+</div>
+<div data-bind="mageInit: {
+        'Magento_Ui/js/modal/modal':{
+
+            'type': 'popup',
+            'title': 'Popup title',
+            'trigger': '[data-trigger=trigger]',
+            'responsive': true,
+            'modalLeftMargin': 45,
+            'buttons': [{
+                text: jQuery.mage.__('Submit'),
+                class: 'button'
+            }]
+        }}">
+    <div class="content">
+        Popup Content
+    </div>
+</div>
+
+

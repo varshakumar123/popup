@@ -1,0 +1,155 @@
+@button-background-color:pink;
+@gradient-primary-color:#FF6480;
+@gradient-secondary-color:#F22E63;
+@progress-bar-background-color:#ddd;
+@progress-bar-boxshadow-color:#888888;
+@animation-stripes-primary-color:#8ed753;
+@animation-stripes-secondary-color:#99da58;
+//
+//  Common (styles-m.css)
+//  _____________________________________________
+/* & when (@media-common = true) {
+    // your code
+ } */
+
+
+ //
+ //  Mobile (styles-m.css)
+ //  _____________________________________________
+ .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    // your code 
+ }
+ 
+ 
+ //
+ //  Tablet
+ //  _____________________________________________
+ 
+ // This will add styles for tablet devices. When using native media-queries, we recommend wrapping your media-queries with media-width Magento mixins or media-target
+ & when (@media-target = 'desktop'), (@media-target = 'all') {
+    @media only screen and (min-width: @screen__m) and (max-width: (@screen__xl - 1)) {
+        // styles for breakpoint >= 768px and < 1440px
+    }
+ }
+ 
+ //
+ //  Desktop (style-l.css)
+ //  _____________________________________________
+ 
+ .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+        
+    .magnasonic-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 400px;
+        .common {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+        .prod-image{
+            width: 175px;
+            height: 175px;
+        }
+    }
+    
+    .modal-popup  {
+        .modal-header {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+        .modal-inner-wrap{
+        width: 100%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        height: 100%;
+        }
+    }
+
+    .modal-content {
+        width: 100%;
+        max-width: 1240px;
+        margin: 0 auto;
+    }
+
+    .bt-action {
+        background-color: @button-background-color;
+        background-image: linear-gradient(to right, @gradient-primary-color, @gradient-secondary-color);
+        padding: 5px 31px;
+        &:active {
+            text-decoration: none;
+        }
+    }
+
+    button {
+        background: none;
+        &:hover {
+            border: 1px solid;
+        }
+    }
+
+    .progress-bar-wrapper {
+        padding-top: 5px;
+        padding-bottom: 10px;
+        .progress-bar-cointainer{
+            margin-top: 20px;
+        }
+        #myProgress {
+            margin: auto;
+            width: 35%;
+            background-color: @progress-bar-background-color;
+            height: 22px;
+            box-shadow: 0px -1px @progress-bar-boxshadow-color;
+            border-radius: 25px;
+            #myBar {
+                position: relative;
+                background-color: @animation-stripes-primary-color;
+                border-radius: 25px;
+                height: 22px; 
+                .progressbar-width{
+                    position: absolute;
+                    left: calc(100% + 5px);
+                    font-weight: 700;
+                }   
+            }
+            .animationStripes{
+                width: 300px;
+                height: 50px;
+                background-image: repeating-linear-gradient(-45deg,@animation-stripes-primary-color, @animation-stripes-primary-color 13px, @animation-stripes-secondary-color 6px, @animation-stripes-secondary-color 25px);
+            }
+        }
+    }
+
+    .title {
+        margin:auto;
+        padding-left: 425px;
+        img.down-arrow {
+            width: 17px;
+            padding-right: 10px;
+        
+        }
+    }
+
+    .image{
+        width: 200px;
+        height: 200px;
+    }
+
+    .temporary {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 180px;
+    }
+
+    .temporary-image {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 300px;
+    }
+
+}
+ 

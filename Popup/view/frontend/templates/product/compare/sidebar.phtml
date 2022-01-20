@@ -1,0 +1,66 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<body>
+    <p>To Know More About!</p>
+    <a href="javascript:;" class="bt-action " data="More Info">Magnasonic</a>
+    <div class="bt-action-file" style="display: none;">
+        <section class="progress-bar-wrapper">
+            <div id="myProgress" class="progress-bar-cointainer" style="display:none;">
+                <div id="myBar" class="animationStripes progress-bar">
+                    <span class="progressbar-width" value=""></span>
+                </div>
+            </div>
+        </section>
+        <div class="temporary-image" style="display:none;">
+        </div>
+        <div class="temporary" style="display:none;">
+            <button class="btn temp" style="display:none;" id="linkid" value="-">
+                hello
+            </button>
+        </div>
+        <div class="magnasonic">
+            <h3 class="title">
+                <img class="down-arrow" src='<?= $this->getViewFileUrl('Tychons_Popup::images/d.png'); ?>'>Click to find
+                the best product for your need
+            </h3>
+            <div class="magnasonic-content">
+          
+                <div class="sound-base common">
+                    <img class="prod-image" style="margin:10px 0" src='<?= $this->getViewFileUrl('Tychons_Popup::images/Sound Base.jpeg'); ?>'>
+                    <button class="sound-bases btn" value="Sound Base">Sound Base</button>
+                </div>
+                <div class="projector common">
+                    <img class= "prod-image" style="margin:10px 0" src='<?= $this->getViewFileUrl('Tychons_Popup::images/projector.jpg'); ?>'>
+                    <button class="projector btn" value="Projector">Projector</button>
+                </div>
+                <div class="jewelry-cleaner common">
+                    <img class= "prod-image" style="margin:10px 0" src='<?= $this->getViewFileUrl('Tychons_Popup::images/jwellery-cleaner.jpg'); ?>'>
+                    <button class="btn" value="Jewelry Cleaner">Jewelry Cleaner</button>
+                </div>
+                <div class="flim-scanner common">
+                    <img class= "prod-image" style="margin:10px 0" src='<?= $this->getViewFileUrl('Tychons_Popup::images/Film-Scaner.jpg'); ?>'>
+                    <button class="btn" value="Flim Scanner">Flim Scanner</button>
+                </div>
+                <div class="clock-radio common">
+                    <img class= "prod-image" style="margin:10px 0" src='<?= $this->getViewFileUrl('Tychons_Popup::images/clock.jpg'); ?>'>
+                    <button class="btn clock-radio" value="Clock-Radio">Clock/Radio</button>
+                </div>
+            </div>
+        </div>
+
+        <iframe src="blank" id="iframe" scrolling="no" height="700px" width="100%"  style="display:none;">
+        </iframe>
+    </div>
+</body>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "popupJs": {}
+        }
+		
+    }
+</script>

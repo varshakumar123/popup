@@ -1,0 +1,1896 @@
+<?php
+
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Magento\Customer\Block\Form\Login $block */
+?>
+<div class="block block-customer-login">
+    <div class="block-title">
+        <strong id="block-customer-login-heading" role="heading"
+            aria-level="2"><?= $block->escapeHtml(__('Registered Customers')) ?></strong>
+    </div>
+    <div class="block-content" aria-labelledby="block-customer-login-heading">
+        <form class="form form-login" action="<?= $block->escapeUrl($block->getPostActionUrl()) ?>" method="post"
+            id="login-form" data-mage-init='{"validation":{}}'>
+            <?= $block->getBlockHtml('formkey') ?>
+            <fieldset class="fieldset login" data-hasrequired="<?= $block->escapeHtml(__('* Required Fields')) ?>">
+                <div class="field note">
+                    <?= $block->escapeHtml(__('If you have an account, sign in with your email address.')) ?></div>
+                <div class="field email required">
+                    <label class="label" for="email"><span><?= $block->escapeHtml(__('Email')) ?></span></label>
+                    <div class="control">
+                        <input name="login[username]" value="<?= $block->escapeHtmlAttr($block->getUsername()) ?>"
+                            <?php if ($block->isAutocompleteDisabled()) : ?> autocomplete="off" <?php endif; ?>
+                            id="email" type="email" class="input-text"
+                            title="<?= $block->escapeHtmlAttr(__('Email')) ?>" data-mage-init='{"mage/trim-input":{}}'
+                            data-validate="{required:true, 'validate-email':true}">
+                    </div>
+                </div>
+                <div class="field password required">
+                    <label for="pass" class="label"><span><?= $block->escapeHtml(__('Password')) ?></span></label>
+                    <div class="control">
+                        <input name="login[password]" type="password" <?php if ($block->isAutocompleteDisabled()) : ?>
+                            autocomplete="off" <?php endif; ?> class="input-text" id="pass"
+                            title="<?= $block->escapeHtmlAttr(__('Password')) ?>" data-validate="{required:true}">
+                    </div>
+                </div>
+                <?= $block->getChildHtml('form_additional_info') ?>
+                <div class="actions-toolbar">
+                    <div class="primary"><button type="submit" class="action login primary" name="send"
+                            id="send2"><span><?= $block->escapeHtml(__('Sign In')) ?></span></button></div>
+                    <div class="secondary"><a class="action remind"
+                            href="<?= $block->escapeUrl($block->getForgotPasswordUrl()) ?>"><span><?= $block->escapeHtml(__('Forgot Your Password?')) ?></span></a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<p>To Know More About!</p>
+<a href="javascript:;" class="bt-action " data="More Info">Magnasonic</a>
+<div class="bt-action-file" style="display: none;">
+    <!-- progress bar -->
+
+
+
+
+    <div class="magnasonic">
+         <div id="myProgress-comtainer">
+            <div id="mybar-container" class="animationStripes" style="width:25%; " class="progress-bar"></div>
+        </div> 
+        <h3 class="h3title">What Would You Like To Choose In Magnasonic ?</h3>
+        <div class="magnasonic-content">
+            <!-- start of sound base -->
+            <div class="sound-bases">
+                <p class="title" style="margin: 10px 0">Sound Base</p>
+                <img class="image" style="margin:10px 0" src='<?= $this->getViewFileUrl('Tychons_Popup::images/Sound Base.jpeg'); ?>'>
+                <button  style="margin: 10px 0" class="sound-base btn shop-now">Shop Now</button>
+            </div>
+            <!-- end of sound base -->
+            <!-- start of projector -->
+            <div class="projectors">
+            <p class="title" style="margin: 10px 0">Projector</p>
+            <img class= "image" style="margin:10px 0" src='<?= $this->getViewFileUrl('Tychons_Popup::images/projector.jpg'); ?>'>
+                <button  style="margin:10px 0" class="projector btn shop-now">Shop Now</button>
+            
+            </div>
+            <!-- end of projector -->
+            <!-- start of jewelry cleaner -->
+            <div class="jewelry-cleaners">
+            <p class="title" style="margin: 10px 0">Jewelry Cleaner</p>
+                <img class= "image" style="margin:10px 0" src='<?= $this->getViewFileUrl('Tychons_Popup::images/jwellery-cleaner.jpg'); ?>'>
+                <button  style="margin: 10px 0" class=" btn shop-now">Shop Now</button>
+                
+            </div>
+            <!-- end of jewelry cleaner -->
+            <!-- start of flim scanner -->
+            <div class="flim-scanners">
+            <p class="title" style="margin: 10px 0">Flim Scanner</p>
+                <img class= "image" style="margin:10px 0" src='<?= $this->getViewFileUrl('Tychons_Popup::images/Film-Scaner.jpg'); ?>'>
+                <button  style="margin: 10px 0" class=" btn shop-now">Shop Now</button>
+               
+            </div>
+            <!-- end of flim scanner -->
+            <!-- start of clock radio -->
+            <div class="clock-radios">
+            <p class="title" style="margin: 10px 0">Clock/Radio</p>
+            <img class= "image" style="margin:10px 0" src='<?= $this->getViewFileUrl('Tychons_Popup::images/clock.jpg'); ?>'>
+                <button  style="margin: 10px 0" class="clock-radio btn shop-now">Shop Now</button>
+                
+            </div>
+            <!-- end of clock radio -->
+        </div>
+    </div>
+    <!-- end of magnasonic -->
+    <!-- start of sound base product -->
+    <div class="soundbase-product" style="display: none;">
+        <div class="myprogress-product">
+            <div id="mybar-container" class="animationStripes" style="width:100%;" class="progress-bar"></div>
+        </div>
+        <div class="back-product go-back-to-magnasonic-from-soundbase">
+            BACK
+        </div>
+        <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+        <span class="img no-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/sound_base.jpeg'); ?>'>
+        </span>
+        <div class="prod-description">
+            <h3 class="product-name">Digital Clock</h3>
+            <div class="stocks-sku">
+                <span class="stock">
+                    IN STOCK
+                </span> |
+                <span class="sku">
+                    DC01
+                </span>
+            </div>
+            <h6 class="product-review">Be the first to review this product</h6>
+            <h4 class="price">₹199.00</h4>
+            <p class="quantity">Quantity:</p>
+            <span>
+                <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+            </span>
+            <div class="addtocart">
+                <button class="discover" type="button">Discover</button>
+                <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>digital-clock.html" target="_blank">Add
+                    To Cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of sound base product -->
+    <!-- start of projector product -->
+    <div class="projector-product" style="display: none;">
+        <div class="myprogress-product">
+            <div id="mybar-container" class="animationStripes" style="width:100%;" class="progress-bar"></div>
+        </div>
+        <div class="back-product go-back-to-magnasonic-from-projector">
+            BACK
+        </div>
+        <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+        <span class="img no-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/projector.jpg'); ?>'>
+        </span>
+        <div class="prod-description">
+            <h3 class="product-name">Digital Clock</h3>
+            <div class="stocks-sku">
+                <span class="stock">
+                    IN STOCK
+                </span> |
+                <span class="sku">
+                    DC01
+                </span>
+            </div>
+            <h6 class="product-review">Be the first to review this product</h6>
+            <h4 class="price">₹199.00</h4>
+            <p class="quantity">Quantity:</p>
+            <span>
+                <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+            </span>
+            <div class="addtocart">
+                <button class="discover" type="button">Discover</button>
+                <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>digital-clock.html" target="_blank">Add
+                    To Cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of projector product -->
+    <!-- start of clock-radio-subdiv -->
+
+    <div class="clock-radio-subdiv" style="display: none;">
+        <!-- progress bar -->
+
+        <div id="myProgress-comtainer">
+            <div id="mybar-container" class="animationStripes"  style="width:50%;  " class="progress-bar"></div>
+        </div>
+        <div class="back go-back-to-magnasonic">
+            BACK
+        </div>
+        <h3 class="crtitle">What Would You Like To Choose In Clock/Radio ?</h3>
+	<div class="common">
+	<div class="clock-radio-subdiv-content-img">
+            <!-- start of simple -->
+            <div class="simple">
+			<!-- <span class="img no-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/clock.jpg'); ?>'>
+        </span> -->
+            </div>
+            <!-- end of simple -->
+            <!-- start of advanced -->
+            <div class="advanced">
+			<!-- <span class="img no-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/clock.jpg'); ?>'>
+        </span> -->
+            </div>
+            <!-- end of advanced -->
+
+        </div>
+        <div class="clock-radio-subdiv-content">
+            <!-- start of simple -->
+            <div class="simple">
+                <button class="simplebtn btn">Simple</button>
+            </div>
+            <!-- end of simple -->
+            <!-- start of advanced -->
+            <div class="advanced">
+                <button class="advancedbtn btn">Advanced</button>
+            </div>
+            <!-- end of advanced -->
+
+        </div>
+	</div>
+    </div>
+    <!-- end of clock-radio-subdiv -->
+    <!-- start of simple-subdiv -->
+    <!--  <div class="hello">
+   <div class="progress-bar" style="height:5px;border:1px solid;">
+
+</div>
+   </div> -->
+
+    <div class="simple-subdiv" style="display: none;">
+        <!-- progress bar -->
+
+        <div id="myProgress-comtainer">
+            <div id="mybar-container" class="animationStripes" style="width:75%;" class="progress-bar"></div>
+        </div>
+        <div class="back go-back-to-clock-radio-subdiv">
+            BACK
+        </div>
+        <h3 class="simpletitle">Do You Need Projection ?</h3>
+        <div class="simple-subdiv-content">
+            <!-- start of no -->
+            <div class="no">
+                <button class="nobtn btn">Simple-NO</button>
+            </div>
+            <!-- end of no -->
+            <!-- start of yes -->
+            <div class="yes">
+                <button class="yesbtn btn">Simple-YES</button>
+            </div>
+            <!-- end of yes -->
+        </div>
+
+    </div>
+    <!-- end of simple-subdiv -->
+    <!-- start of no projection -->
+    <!-- progress bar -->
+
+
+    <div class="no-projection" style="display: none;">
+        <div class="myprogress-product">
+            <div id="mybar-container" class="animationStripes" style="width:100%;" class="progress-bar"></div>
+        </div>
+        <div class="back-product go-back-to-simple-subdiv">
+            BACK
+        </div>
+        <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+        <span class="img no-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/clock.jpg'); ?>'>
+        </span>
+        <div class="prod-description">
+            <h3 class="product-name">Digital Clock</h3>
+            <div class="stocks-sku">
+                <span class="stock">
+                    IN STOCK
+                </span> |
+                <span class="sku">
+                    DC01
+                </span>
+            </div>
+            <h6 class="product-review">Be the first to review this product</h6>
+            <h4 class="price">₹199.00</h4>
+            <p class="quantity">Quantity:</p>
+            <span>
+                <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+            </span>
+            <div class="addtocart">
+                <button class="discover" type="button">Discover</button>
+                <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>digital-clock.html" target="_blank">Add
+                    To Cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of no projection -->
+    <!-- start of yes projection -->
+    <div class="yes-projection" style="display: none;">
+        <div class="myprogress-product">
+            <div id="mybar-container" class="animationStripes" style="width:100%;" class="progress-bar"></div>
+        </div>
+        <div class=" back-product go-back-to-simple-subdiv-yes">
+            BACK
+        </div>
+        <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+        <span class="img yes-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/clock_projection.png'); ?>'>
+        </span>
+        <div class="prod-description">
+            <h3 class="product-name">Digital Alarm Clock Radio</h3>
+            <div class="stocks-sku">
+                <span class="stock">
+                    IN STOCK
+                </span> |
+                <span class="sku">
+                    DACR12
+                </span>
+            </div>
+            <h6 class="product-review">Be the first to review this product</h6>
+            <h4 class="price">₹299.00</h4>
+            <p class="quantity">Quantity:</p>
+            <span>
+                <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+            </span>
+            <div class="addtocart">
+                <button class="discover" type="button">Discover</button>
+                <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>digital-alarm-clock-radio.html"
+                    target="_blank">Add To Cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of yes projection -->
+    <!-- start of advanced-subdiv -->
+    <div class="advanced-subdiv" style="display: none;">
+		<div id="myProgress-comtainer">
+				<div id="mybar-container" class="animationStripes" style="width:65%; " class="progress-bar"></div>
+			</div>
+        <div class="back go-back-to-clock-radio-subdiv-from-advanced">
+            BACK
+        </div>
+        <h3 class="advanced-title">Do You Need USB Charging ?</h3>
+        <div class="advanced-subdiv-content">
+            <!-- start of no -->
+            <div class="no">
+                <button class="usb-nobtn btn">USB-NO</button>
+            </div>
+            <!-- end of no -->
+            <!-- start of yes -->
+            <div class="yes">
+                <button class="usb-yesbtn btn">YES</button>
+            </div>
+            <!-- end of yes -->
+
+        </div>
+    </div>
+    <!-- end of advanced-subdiv -->
+    <!-- start of no usb-charging -->
+
+    <div class="no-usb-charging" style="display: none;">
+		<div id="myProgress-comtainer">
+				<div id="mybar-container" class="animationStripes" style="width:75%; " class="progress-bar"></div>
+			</div>
+        <div class="back go-back-to-usb-charging-from-y-n">
+            BACK
+        </div>
+        <h3 class="no-usb-projection-title">Do You Need Projection ?</h3>
+        <div class="no-usb-charging-content">
+            <!-- start of no -->
+            <div class="no">
+                <button class="noprojection-usb-nobtn btn">USB-PROJ-NO</button>
+            </div>
+            <!-- end of no -->
+            <!-- start of yes -->
+            <div class="yes">
+                <button class="projection-usb-yesbtn btn">YES</button>
+            </div>
+            <!-- end of yes -->
+        </div>
+    </div>
+    <!-- end of no usb-charging -->
+    <!-- start of no projection no usb -->
+    <div class="no-projection-no-usb" style="display: none;">
+        <div class="myprogress-product">
+            <div id="mybar-container"  class="animationStripes" style="width:100%;" class="progress-bar"></div>
+        </div>
+        <div class="back-product go-back-to-usb-charging-to-y-n">
+            BACK
+        </div>
+        <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+        <span class="img no-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/no_usb_clock.jpeg'); ?>'>
+        </span>
+        <div class="prod-description">
+            <h3 class="product-name"> No USB Clock</h3>
+            <div class="stocks-sku">
+                <span class="stock">
+                    IN STOCK
+                </span> |
+                <span class="sku">
+                    CUSB01
+                </span>
+            </div>
+            <h6 class="product-review">Be the first to review this product</h6>
+
+            <h4 class="price">₹299.00</h4>
+            <p class="quantity">Quantity:</p>
+            <span>
+                <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+            </span>
+            <div class="addtocart">
+                <button class="discover" type="button">Discover</button>
+                <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>no-usb-clock.html" target="_blank">Add
+                    To Cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of no projection no usb -->
+    <!-- start of no usb-charging no projection aux input -->
+    <div class="projection-aux-no-usb-charging" style="display: none;">
+	<div id="myProgress-comtainer">
+            <div id="mybar-container" class="animationStripes" style="width:85%;" class="progress-bar"></div>
+        </div>
+        <div class="back go-back-to-usb-charging-no-projection">
+            BACK
+        </div>
+        <h3 class="no-usb-projection-aux-title">Do You Need AUX Input ?</h3>
+        <div class="projection-aux-no-usb-charging-content">
+            <!-- start of no -->
+            <div class="no">
+                <button class="projection-no_aux-usb-nobtn btn">NO</button>
+            </div>
+            <!-- end of no -->
+            <!-- start of yes -->
+            <div class="yes">
+                <button class="projection-yes_aux-usb-yesbtn btn">YES</button>
+            </div>
+            <!-- end of yes -->
+        </div>
+    </div>
+    <!-- end of no usb-charging no projection aux input  -->
+    <!-- start of projection no usb charging no aux input-->
+    <div class="yes-projection-no-usb" style="display: none;">
+        <div class="myprogress-product">
+            <div id="mybar-container" class="animationStripes" style="width:100%;" class="progress-bar"></div>
+        </div>
+        <div class="back-product go-back-to-usb-charging-aux-input">
+            BACK
+        </div>
+        <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+        <span class="img yes-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/projection_no_aux.jpeg'); ?>'>
+        </span>
+        <div class="prod-description">
+            <h3 class="product-name"> No AUX Digital Clock</h3>
+            <div class="stocks-sku">
+                <span class="stock">
+                    IN STOCK
+                </span> |
+                <span class="sku">
+                    NXDC01
+                </span>
+            </div>
+            <h6 class="product-review">Be the first to review this product</h6>
+            <h4 class="price">₹399.00</h4>
+            <p class="quantity">Quantity:</p>
+            <span>
+                <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+            </span>
+            <div class="addtocart">
+                <button class="discover" type="button">Discover</button>
+                <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>no-aux-digital-clock.html"
+                    target="_blank">Add To Cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of  projection no usb charging no aux input-->
+    <!-- start of projection no usb charging aux input -->
+    <div class="yes-projection-aux-no-usb" style="display: none;">
+		<div  class="myprogress-product">
+			<div id="mybar-container" class="animationStripes" style="width:100%;" class="progress-bar"></div>
+		</div>
+        <div class="back-product go-back-to-usb-charging-aux-input-from-no">
+            BACK
+        </div>
+        <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+        <span class="img yes-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/aux_clock.jpg'); ?>'>
+        </span>
+        <div class="prod-description">
+            <h3 class="product-name"> AUX Digital Clock</h3>
+            <div class="stocks-sku">
+                <span class="stock">
+                    IN STOCK
+                </span> |
+                <span class="sku">
+                    XDC01
+                </span>
+            </div>
+            <h6 class="product-review">Be the first to review this product</h6>
+
+            <h4 class="price">₹499.00</h4>
+            <p class="quantity">Quantity:</p>
+            <span>
+                <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+            </span>
+            <div class="addtocart">
+                <button class="discover" type="button">Discover</button>
+                <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>aux-digital-clock.html"
+                    target="_blank">Add To Cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of  projection no usb charging aux input -->
+    <!-- start of usb charging yes projection-->
+    <div class="yes-usb-charging" style="display: none;">
+	<div id="myProgress-comtainer">
+            <div id="mybar-container" class="animationStripes" style="width:75%;" class="progress-bar"></div>
+        </div>
+        <div class="back go-back-to-usb-charging-from-yes">
+            BACK
+        </div>
+        <h3 class="usb-yes-title">Do You Need Projection ?</h3>
+        <div class="yes-usb-charging-content">
+            <!-- start of no -->
+            <div class="no">
+                <button class="noprojection-usb-nobtn1 btn">NO</button>
+            </div>
+            <!-- end of no -->
+            <!-- start of yes -->
+            <div class="yes">
+                <button class="projection-usb-yesbtn1 btn">YES </button>
+            </div>
+            <!-- end of yes -->
+        </div>
+    </div>
+    <!-- end of usb charging yes projection-->
+    <!-- start of usb charging yes projection no atuo brightness-->
+    <div class="yes-usb-charging-ab" style="display: none;">
+	<div id="myProgress-comtainer">
+            <div id="mybar-container" class="animationStripes" style="width:85%;" class="progress-bar"></div>
+        </div>
+        <div class="back go-back-to-usb-charging-yes-projection-from-autobrightness">
+            BACK
+        </div>
+        <h3 class="usb-yes-autobrightness-title">Do You Need Auto Brightness ?</h3>
+        <div class="yes-usb-charging-ab-content">
+            <!-- start of no -->
+            <div class="no">
+                <button class="noab-noprojection-usb-nobtn1 btn">NO</button>
+            </div>
+            <!-- end of no -->
+            <!-- start of yes -->
+            <div class="yes">
+                <button class="ab-projection-usb-yesbtn1 btn">YES</button>
+            </div>
+            <!-- end of yes -->
+        </div>
+    </div>
+    <!-- end of usb charging yes projection no atuo brightness-->
+    <!-- start of usb charging yes projection no atuo brightness no display color-->
+    <div class="display-color" style="display: none;">
+		<div id="myProgress-comtainer">
+				<div id="mybar-container" class="animationStripes" style="width:95%;" class="progress-bar"></div>
+			</div>
+        <div class="back go-back-to-usb-charging-autobrightness-from-displaycolor">
+            BACK
+        </div>
+        <h3 class="color-title">Choose The Display Color ?</h3>
+        <div class="display-color-content">
+            <!-- start of no -->
+            <div class="white">
+                <button class="white-btn btn">WHITE</button>
+            </div>
+            <!-- end of no -->
+            <!-- start of yes -->
+            <div class="blue">
+                <button class="blue-btn btn">BLUE</button>
+            </div>
+            <!-- end of yes -->
+        </div>
+    </div>
+    <!-- end of usb charging yes projection no atuo brightness no display color-->
+    <!-- start of projection  usb charging white display no projection no brightness -->
+    <div class="no-projection-nobrightness-white-usb" style="display: none;">
+		<div  class="myprogress-product">
+			<div id="mybar-container" class="animationStripes" style="width:100%;" class="progress-bar"></div>
+		</div>
+        <div class="back-product go-back-to-usb-charging-autobrightness-displaycolor-from-product-white">
+            BACK
+        </div>
+        <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+        <span class="img yes-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/white_clock.jpg'); ?>'>
+        </span>
+        <div class="prod-description">
+            <h3 class="product-name"> Clock Radio</h3>
+            <div class="stocks-sku">
+                <span class="stock">
+                    IN STOCK
+                </span> |
+                <span class="sku">
+                    XDC01
+                </span>
+            </div>
+            <h6 class="product-review">Be the first to review this product</h6>
+
+            <h4 class="price">₹499.00</h4>
+            <p class="quantity">Quantity:</p>
+            <span>
+                <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+            </span>
+            <div class="addtocart">
+                <button class="discover" type="button">Discover</button>
+                <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>aux-digital-clock.html"
+                    target="_blank">Add To Cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of  projection  usb charging white display no projection no brightness -->
+    <!-- start of projection  usb charging blue display no projection no brightness -->
+    <div class="no-projection-nobrightness-blue-usb" style="display: none;">
+		<div  class="myprogress-product">
+			<div id="mybar-container" class="animationStripes" style="width:100%;" class="progress-bar"></div>
+		</div>
+        <div class="back-product go-back-to-usb-charging-autobrightness-displaycolor-from-product-blue">
+            BACK
+        </div>
+        <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+        <span class="img yes-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/blue_clock.jpg'); ?>'>
+        </span>
+        <div class="prod-description">
+            <h3 class="product-name"> Clock Radio</h3>
+            <div class="stocks-sku">
+                <span class="stock">
+                    IN STOCK
+                </span> |
+                <span class="sku">
+                    XDC01
+                </span>
+            </div>
+            <h6 class="product-review">Be the first to review this product</h6>
+
+            <h4 class="price">₹499.00</h4>
+            <p class="quantity">Quantity:</p>
+            <span>
+                <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+            </span>
+            <div class="addtocart">
+                <button class="discover" type="button">Discover</button>
+                <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>aux-digital-clock.html"
+                    target="_blank">Add To Cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of  projection  usb charging blue display no projection no brightness -->
+    <!-- start of projection  usb charging with brightness -->
+    <div class="no-projection-brightness-usb" style="display: none;">
+		<div  class="myprogress-product">
+			<div id="mybar-container" class="animationStripes" style="width:100%;" class="progress-bar"></div>
+		</div>
+        <div class="back-product go-back-to-usb-charging-autobrightness-from-product">
+            BACK
+        </div>
+        <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+        <span class="img yes-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/auto_brightness.jpg'); ?>'>
+        </span>
+        <div class="prod-description">
+            <h3 class="product-name"> Clock Radio</h3>
+            <div class="stocks-sku">
+                <span class="stock">
+                    IN STOCK
+                </span> |
+                <span class="sku">
+                    XDC01
+                </span>
+            </div>
+            <h6 class="product-review">Be the first to review this product</h6>
+
+            <h4 class="price">₹499.00</h4>
+            <p class="quantity">Quantity:</p>
+            <span>
+                <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+            </span>
+            <div class="addtocart">
+                <button class="discover" type="button">Discover</button>
+                <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>aux-digital-clock.html"
+                    target="_blank">Add To Cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of  projection  usb charging with brightness -->
+    <!-- start of  projection  usb charging  bluetooth -->
+    <div class="bluetooth" style="display: none;">
+	<div id="myProgress-comtainer">
+            <div id="mybar-container" class="animationStripes" style="width:80%;" class="progress-bar"></div>
+        </div>
+        <div class="back go-back-to-usb-charging-projection-from-bluetooth">
+            BACK
+        </div>
+        <h3 class="bluetooth-title">Do You Need Bluetooth ?</h3>
+        <div class="bluetooth-content">
+            <!-- start of no -->
+            <div class="no">
+                <button class="bluetooth-nobtn btn">NO</button>
+            </div>
+            <!-- end of no -->
+            <!-- start of yes -->
+            <div class="yes">
+                <button class="bluetooth-yesbtn btn">YES</button>
+            </div>
+            <!-- end of yes -->
+        </div>
+    </div>
+    <!-- end of  projection  usb charging  bluetooth -->
+    <!-- start of  projection  usb charging with bluetooth  -->
+    <div class="projection-bluetooth-usb" style="display: none;">
+		<div  class="myprogress-product">
+			<div id="mybar-container" class="animationStripes" style="width:100%;" class="progress-bar"></div>
+		</div>
+        <div class="back-product go-back-to-usb-charging-bluetooth-from-product">
+            BACK
+        </div>
+        <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+        <span class="img yes-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/bluetooth.jpg'); ?>'>
+        </span>
+        <div class="prod-description">
+            <h3 class="product-name"> Clock Radio</h3>
+            <div class="stocks-sku">
+                <span class="stock">
+                    IN STOCK
+                </span> |
+                <span class="sku">
+                    XDC01
+                </span>
+            </div>
+            <h6 class="product-review">Be the first to review this product</h6>
+
+            <h4 class="price">₹499.00</h4>
+            <p class="quantity">Quantity:</p>
+            <span>
+                <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+            </span>
+            <div class="addtocart">
+                <button class="discover" type="button">Discover</button>
+                <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>aux-digital-clock.html"
+                    target="_blank">Add To Cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of  projection  usb charging with bluetooth -->
+    <!-- start of  projection  usb charging with no bluetooth -->
+    <div class="bluetooth-ab" style="display: none;">
+		<div id="myProgress-comtainer">
+            <div id="mybar-container" class="animationStripes" style="width:85%;" class="progress-bar"></div>
+        </div>
+        <div class="back go-back-to-usb-charging-bluetooth-from-autobrightness">
+            BACK
+        </div>
+        <h3 class="bluetooth-ab-title">Do You Need Auto Brightness ?</h3>
+        <div class="bluetooth-ab-content">
+            <!-- start of no -->
+            <div class="no">
+                <button class="bluetooth-ab-nobtn btn">NO</button>
+            </div>
+            <!-- end of no -->
+            <!-- start of yes -->
+            <div class="yes">
+                <button class="bluetooth-ab-yesbtn btn">YES</button>
+            </div>
+            <!-- end of yes -->
+        </div>
+    </div>
+    <!-- start of  projection  usb charging with no bluetooth -->
+    <!-- start of projection  usb charging with brightness -->
+    <div class="bluetooth-brightness-usb" style="display: none;">
+		<div  class="myprogress-product">
+			<div id="mybar-container" class="animationStripes" style="width:100%;" class="progress-bar"></div>
+		</div>
+        <div class="back-product go-back-to-usb-charging-bluetooth-autobrightness-from-product">
+            BACK
+        </div>
+        <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+        <span class="img yes-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/bluetooth_ab_clock.jpeg'); ?>'>
+        </span>
+        <div class="prod-description">
+            <h3 class="product-name"> Clock Radio</h3>
+            <div class="stocks-sku">
+                <span class="stock">
+                    IN STOCK
+                </span> |
+                <span class="sku">
+                    XDC01
+                </span>
+            </div>
+            <h6 class="product-review">Be the first to review this product</h6>
+
+            <h4 class="price">₹499.00</h4>
+            <p class="quantity">Quantity:</p>
+            <span>
+                <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+            </span>
+            <div class="addtocart">
+                <button class="discover" type="button">Discover</button>
+                <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>aux-digital-clock.html"
+                    target="_blank">Add To Cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of  projection  usb charging with brightness -->
+    <!-- start of  projection  usb charging with no bluetooth with no auto brightness -->
+    <div class="bluetooth-ab-no" style="display: none;">
+	<div id="myProgress-comtainer">
+            <div id="mybar-container" class="animationStripes" style="width:90%;" class="progress-bar"></div>
+        </div>
+        <div class="back go-back-to-usb-charging-autobrightness-from-fm-am">
+            BACK
+        </div>
+        <h3 class="bluetooth-ab-no-title">Choose FM OR AM ?</h3>
+        <div class="bluetooth-ab-no-content">
+            <!-- start of no -->
+            <div class="no">
+                <button class="bluetooth-ab-fm-nobtn btn">FM Only</button>
+            </div>
+            <!-- end of no -->
+            <!-- start of yes -->
+            <div class="yes">
+                <button class="bluetooth-ab-am-yesbtn btn">AM/FM</button>
+            </div>
+            <!-- end of yes -->
+
+        </div>
+    </div>
+    <!-- end of  projection  usb charging with no bluetooth with no auto brightness -->
+    <!-- start of projection  usb charging with brightness fm product -->
+    <div class="bluetooth-fm-usb" style="display: none;">
+		<div  class="myprogress-product">
+				<div id="mybar-container" class="animationStripes" style="width:100%;" class="progress-bar"></div>
+			</div>
+        <div class="back-product go-back-to-usb-charging-bluetooth-autobrightness-no-from-fm-product">
+            BACK
+        </div>
+        <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+        <span class="img yes-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/fm_clock.jpg'); ?>'>
+        </span>
+        <div class="prod-description">
+            <h3 class="product-name"> Clock Radio</h3>
+            <div class="stocks-sku">
+                <span class="stock">
+                    IN STOCK
+                </span> |
+                <span class="sku">
+                    XDC01
+                </span>
+            </div>
+            <h6 class="product-review">Be the first to review this product</h6>
+
+            <h4 class="price">₹499.00</h4>
+            <p class="quantity">Quantity:</p>
+            <span>
+                <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+            </span>
+            <div class="addtocart">
+                <button class="discover" type="button">Discover</button>
+                <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>aux-digital-clock.html"
+                    target="_blank">Add To Cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of  projection  usb charging with brightness -->
+    <!-- start of fm/am display color -->
+    <div class="display-color-am" style="display: none;">
+	<div id="myProgress-comtainer">
+            <div id="mybar-container" class="animationStripes" style="width:95%;" class="progress-bar"></div>
+        </div>
+        <div class="back go-back-to-usb-charging-bluetooth-autobrightness-no-am-from-displaycolor">
+            BACK
+        </div>
+        <h3 class="color-am-title">Choose The Display Color ?</h3>
+        <div class="display-color-am-content">
+            <!-- start of no -->
+            <div class="white">
+                <button class="white-am-btn btn">WHITE</button>
+            </div>
+            <!-- end of no -->
+            <!-- start of yes -->
+            <div class="blue">
+                <button class="blue-am-btn btn">BLUE</button>
+            </div>
+            <!-- end of yes -->
+        </div>
+    </div>
+    <!-- end of fm/am display color -->
+    <!-- start of projection  usb charging no brightness white color-->
+    <div class="bluetooth-am-white-usb" style="display: none;">
+		<div  class="myprogress-product">
+				<div id="mybar-container" class="animationStripes" style="width:100%;" class="progress-bar"></div>
+			</div>
+        <div class="back-product go-back-to-usb-charging-bluetooth-autobrightness-no-from-fm-product-white">
+            BACK
+        </div>
+        <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+        <span class="img yes-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/white_am.jpeg'); ?>'>
+        </span>
+        <div class="prod-description">
+            <h3 class="product-name"> Clock Radio</h3>
+            <div class="stocks-sku">
+                <span class="stock">
+                    IN STOCK
+                </span> |
+                <span class="sku">
+                    XDC01
+                </span>
+            </div>
+            <h6 class="product-review">Be the first to review this product</h6>
+
+            <h4 class="price">₹499.00</h4>
+            <p class="quantity">Quantity:</p>
+            <span>
+                <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+            </span>
+            <div class="addtocart">
+                <button class="discover" type="button">Discover</button>
+                <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>aux-digital-clock.html"
+                    target="_blank">Add To Cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of  projection  usb charging no brightness white color -->
+    <!-- start of projection  usb charging no brightness blue color -->
+    <div class="bluetooth-am-blue-usb" style="display: none;">
+		<div  class="myprogress-product">
+				<div id="mybar-container" class="animationStripes" style="width:100%;" class="progress-bar"></div>
+			</div>
+        <div class="back-product go-back-to-usb-charging-bluetooth-autobrightness-no-from-fm-product-blue">
+            BACK
+        </div>
+        <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+        <span class="img yes-projection-clock">
+            <img src='<?= $this->getViewFileUrl('Tychons_Popup::images/am_blue.jpg'); ?>'>
+        </span>
+        <div class="prod-description">
+            <h3 class="product-name"> Clock Radio</h3>
+            <div class="stocks-sku">
+                <span class="stock">
+                    IN STOCK
+                </span> |
+                <span class="sku">
+                    XDC01
+                </span>
+            </div>
+            <h6 class="product-review">Be the first to review this product</h6>
+
+            <h4 class="price">₹499.00</h4>
+            <p class="quantity">Quantity:</p>
+            <span>
+                <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+            </span>
+            <div class="addtocart">
+                <button class="discover" type="button">Discover</button>
+                <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>aux-digital-clock.html"
+                    target="_blank">Add To Cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of  projection  usb charging no brightness blue color -->
+</div>
+<script>
+require(
+    [
+        'jquery',
+        'Magento_Ui/js/modal/modal'
+    ],
+    function(
+        $,
+        modal
+    ) {
+
+        var options = {
+            type: 'popup',
+            responsive: true,
+            innerScroll: false,
+
+            buttons: []
+        };
+
+        $(".bt-action").click(function() {
+            $(".bt-action-file").modal(options).modal('openModal');
+
+        });
+
+        /* to show clock/radio */
+        $(".clock-radio").on('click', function() {
+            $(".clock-radio-subdiv").removeAttr("style");
+            $(".magnasonic").hide();
+            /* go-back-to-magnasonic */
+            $(".go-back-to-magnasonic").on('click', function() {
+                $(".magnasonic").show();
+                $(".clock-radio-subdiv").hide();
+            });
+        });
+
+        /* to show simple sub div */
+        $(".simplebtn").on('click', function() {
+            $(".simple-subdiv").removeAttr("style");
+            $(".clock-radio-subdiv").hide();
+            /* go-back-to-clock-radio-subdiv */
+            $(".go-back-to-clock-radio-subdiv").on('click', function() {
+                $(".clock-radio-subdiv").show();
+                $(".simple-subdiv").hide();
+            });
+        });
+
+        /* to show simple category with no projection (product)*/
+        $(".nobtn").on('click', function() {
+            $(".no-projection").removeAttr("style");
+            $(".simple-subdiv").hide();
+            /* go-back-to-simple-subdiv */
+            $(".go-back-to-simple-subdiv").on('click', function() {
+                $(".no-projection").hide();
+                $(".simple-subdiv").show();
+            });
+        });
+
+        /* to show simple category with no projection (product)*/
+        $(".yesbtn").on('click', function() {
+            $(".yes-projection").removeAttr("style");
+            $(".simple-subdiv").hide();
+            /* go-back-to-simple-subdiv */
+            $(".go-back-to-simple-subdiv-yes").on('click', function() {
+                $(".yes-projection").hide();
+                $(".simple-subdiv").show();
+            });
+        });
+
+        /* to show advanced category  */
+        $(".advancedbtn").on('click', function() {
+            $(".advanced-subdiv").removeAttr("style");
+            $(".clock-radio-subdiv").hide();
+            /* go-back-to-clock-radio-subdiv-from-advanced*/
+            $(".go-back-to-clock-radio-subdiv-from-advanced").on('click', function() {
+                $(".advanced-subdiv").hide();
+                $(".clock-radio-subdiv").show();
+            });
+        });
+
+        /* to show advanced category with no usb charging */
+        $(".usb-nobtn").on('click', function() {
+            $(".no-usb-charging").removeAttr("style");
+            $(".advanced-subdiv").hide();
+            /* go-back-to-usb-charging-from-y/n*/
+            $(".go-back-to-usb-charging-from-y-n").on('click', function() {
+                $(".advanced-subdiv").show();
+                $(".no-usb-charging").hide();
+            });
+        });
+
+        /* to show advanced category withno usb cgarging no projection (product)*/
+        $(".noprojection-usb-nobtn").on('click', function() {
+            $(".no-projection-no-usb").removeAttr("style");
+            $(".no-usb-charging").hide();
+            /* go-back-to-simple-subdiv */
+            $(".go-back-to-usb-charging-to-y-n").on('click', function() {
+                $(".no-projection-no-usb").hide();
+                $(".no-usb-charging").show();
+            });
+        });
+
+        /* to show advanced category with no usb charging with projection aux input*/
+        $(".projection-usb-yesbtn").on('click', function() {
+            $(".projection-aux-no-usb-charging").removeAttr("style");
+            $(".no-usb-charging").hide();
+            /*go-back-to-usb-charging-no-projection */
+            $(".go-back-to-usb-charging-no-projection").on('click', function() {
+                $(".projection-aux-no-usb-charging").hide();
+                $(".no-usb-charging").show();
+            });
+        });
+
+        /* to show advanced category with no usb charging with projection with no aux input (product) */
+        $(".projection-no_aux-usb-nobtn").on('click', function() {
+            $(".yes-projection-no-usb").removeAttr("style");
+            $(".projection-aux-no-usb-charging").hide();
+            /*go-back-to-usb-charging-aux-input */
+            $(".go-back-to-usb-charging-aux-input").on('click', function() {
+                $(".yes-projection-no-usb").hide();
+                $(".projection-aux-no-usb-charging").show();
+            });
+        });
+
+        /* to show advanced category with no usb charging with projection with  aux input(product) */
+        $(".projection-yes_aux-usb-yesbtn").on('click', function() {
+            $(".yes-projection-aux-no-usb").removeAttr("style");
+            $(".projection-aux-no-usb-charging").hide();
+            /* go-back-to-usb-charging-aux-input-from-no */
+            $(".go-back-to-usb-charging-aux-input-from-no").on('click', function() {
+                $(".yes-projection-aux-no-usb").hide();
+                $(".projection-aux-no-usb-charging").show();
+            });
+        });
+
+        /* to show advanced category with usb charging */
+        $(".usb-yesbtn").on('click', function() {
+            $(".yes-usb-charging").removeAttr("style");
+            $(".advanced-subdiv").hide();
+            /*  go-back-to-usb-charging-from-yes */
+            $(".go-back-to-usb-charging-from-yes").on('click', function() {
+                $(".yes-usb-charging").hide();
+                $(".advanced-subdiv").show();
+            });
+        });
+
+        /* to show advanced category with usb charging no projection*/
+        $(".noprojection-usb-nobtn1").on('click', function() {
+            $(".yes-usb-charging-ab").removeAttr("style");
+            $(".yes-usb-charging").hide();
+            /*  go-back-to-usb-charging-yes-projection-from-autobrightness */
+            $(".go-back-to-usb-charging-yes-projection-from-autobrightness").on('click', function() {
+                $(".yes-usb-charging-ab").hide();
+                $(".yes-usb-charging").show();
+            });
+        });
+
+        /* to show advanced category with usb charging no projection no brightness , color*/
+        $(".noab-noprojection-usb-nobtn1").on('click', function() {
+            $(".display-color").removeAttr("style");
+            $(".yes-usb-charging-ab").hide();
+            /* go-back-to-usb-charging-autobrightness-from-displaycolor */
+            $(".go-back-to-usb-charging-autobrightness-from-displaycolor").on('click', function() {
+                $(".display-color").hide();
+                $(".yes-usb-charging-ab").show();
+            });
+        });
+
+        /* to show advanced category with usb charging no projection no brightness display white(product)*/
+        $(".white-btn").on('click', function() {
+            $(".no-projection-nobrightness-white-usb").removeAttr("style");
+            $(".display-color").hide();
+            /*go-back-to-usb-charging-autobrightness-displaycolor-from-product-white */
+            $(".go-back-to-usb-charging-autobrightness-displaycolor-from-product-white").on('click',
+                function() {
+                    $(".no-projection-nobrightness-white-usb").hide();
+                    $(".display-color").show();
+                });
+        });
+
+        /* to show advanced category with usb charging no projection no brightness display white(product)*/
+        $(".blue-btn").on('click', function() {
+            $(".no-projection-nobrightness-blue-usb").removeAttr("style");
+            $(".display-color").hide();
+            /*go-back-to-usb-charging-autobrightness-displaycolor-from-product-blue */
+            $(".go-back-to-usb-charging-autobrightness-displaycolor-from-product-blue").on('click',
+                function() {
+                    $(".no-projection-nobrightness-blue-usb").hide();
+                    $(".display-color").show();
+                });
+        });
+
+        /* to show advanced category with usb charging no projection with brightness (product)*/
+        $(".ab-projection-usb-yesbtn1").on('click', function() {
+            $(".no-projection-brightness-usb").removeAttr("style");
+            $(".yes-usb-charging-ab").hide();
+            /*go-back-to-usb-charging-autobrightness-from-product */
+            $(".go-back-to-usb-charging-autobrightness-from-product").on('click', function() {
+                $(".no-projection-brightness-usb").hide();
+                $(".yes-usb-charging-ab").show();
+            });
+        });
+
+        /* to show advanced category with usb charging no projection*/
+        $(".projection-usb-yesbtn1").on('click', function() {
+            $(".bluetooth").removeAttr("style");
+            $(".yes-usb-charging").hide();
+            /*go-back-to-usb-charging-projection-from-bluetooth */
+            $(".go-back-to-usb-charging-projection-from-bluetooth").on('click', function() {
+                $(".bluetooth").hide();
+                $(".yes-usb-charging").show();
+            });
+        });
+
+        /* to show advanced category with usb charging with projection with bluetooth (product)*/
+        $(".bluetooth-yesbtn").on('click', function() {
+            $(".projection-bluetooth-usb").removeAttr("style");
+            $(".bluetooth").hide();
+            /*go-back-to-usb-charging-bluetooth-from-product */
+            $(".go-back-to-usb-charging-bluetooth-from-product").on('click', function() {
+                $(".projection-bluetooth-usb").hide();
+                $(".bluetooth").show();
+            });
+        });
+
+        /* to show advanced category with usb charging with projection no bluetooth*/
+        $(".bluetooth-nobtn").on('click', function() {
+            $(".bluetooth-ab").removeAttr("style");
+            $(".bluetooth").hide();
+            /*go-back-to-usb-charging-bluetooth-from-autobrightness */
+            $(".go-back-to-usb-charging-bluetooth-from-autobrightness").on('click', function() {
+                $(".bluetooth-ab").hide();
+                $(".bluetooth").show();
+            });
+        });
+
+        /* to show advanced category with usb charging with projection with bluetooth*/
+        $(".bluetooth-ab-yesbtn").on('click', function() {
+            $(".bluetooth-brightness-usb").removeAttr("style");
+            $(".bluetooth-ab").hide();
+            /*go-back-to-usb-charging-bluetooth-autobrightness-from-product */
+            $(".go-back-to-usb-charging-bluetooth-autobrightness-from-product").on('click', function() {
+                $(".bluetooth-brightness-usb").hide();
+                $(".bluetooth-ab").show();
+            });
+        });
+
+        /* to show advanced category with usb charging with projection with bluetooth*/
+        $(".bluetooth-ab-nobtn").on('click', function() {
+            $(".bluetooth-ab-no").removeAttr("style");
+            $(".bluetooth-ab").hide();
+            /*go-back-to-usb-charging-autobrightness-from-fm-am */
+            $(".go-back-to-usb-charging-autobrightness-from-fm-am").on('click', function() {
+                $(".bluetooth-ab-no").hide();
+                $(".bluetooth-ab").show();
+            });
+        });
+
+        /* to show advanced category with usb charging with projection no bluetooth fm only (product)*/
+        $(".bluetooth-ab-fm-nobtn").on('click', function() {
+            $(".bluetooth-fm-usb").removeAttr("style");
+            $(".bluetooth-ab-no").hide();
+            /*go-back-to-usb-charging-bluetooth-autobrightness-no-from-fm-product */
+            $(".go-back-to-usb-charging-bluetooth-autobrightness-no-from-fm-product").on('click',
+                function() {
+                    $(".bluetooth-fm-usb").hide();
+                    $(".bluetooth-ab-no").show();
+                });
+        });
+
+        /* to show advanced category with usb charging with projection no bluetooth no brightness fm/am only display color*/
+        $(".bluetooth-ab-am-yesbtn").on('click', function() {
+            $(".display-color-am").removeAttr("style");
+            $(".bluetooth-ab-no").hide();
+            /*go-back-to-usb-charging-bluetooth-autobrightness-no-am-from-displaycolor */
+            $(".go-back-to-usb-charging-bluetooth-autobrightness-no-am-from-displaycolor").on('click',
+                function() {
+                    $(".display-color-am").hide();
+                    $(".bluetooth-ab-no").show();
+                });
+        });
+
+        /* to show advanced category with usb charging with projection no bluetooth am/fm white (product)*/
+        $(".white-am-btn").on('click', function() {
+            $(".bluetooth-am-white-usb").removeAttr("style");
+            $(".display-color-am").hide();
+            /*go-back-to-usb-charging-bluetooth-autobrightness-no-from-fm-product-white */
+            $(".go-back-to-usb-charging-bluetooth-autobrightness-no-from-fm-product-white").on('click',
+                function() {
+                    $(".bluetooth-am-white-usb").hide();
+                    $(".display-color-am").show();
+                });
+        });
+
+        /* to show advanced category with usb charging with projection no bluetooth am/fm blue (product)*/
+        $(".blue-am-btn").on('click', function() {
+            $(".bluetooth-am-blue-usb").removeAttr("style");
+            $(".display-color-am").hide();
+            /*go-back-to-usb-charging-bluetooth-autobrightness-no-from-fm-product-blue */
+            $(".go-back-to-usb-charging-bluetooth-autobrightness-no-from-fm-product-blue").on('click',
+                function() {
+                    $(".bluetooth-am-blue-usb").hide();
+                    $(".display-color-am").show();
+                });
+        });
+
+        /* to show sound base (product) */
+        $(".sound-base").on('click', function() {
+            $(".soundbase-product").removeAttr("style");
+            $(".magnasonic").hide();
+            /* go-back-to-magnasonic-from-soundbase*/
+            $(".go-back-to-magnasonic-from-soundbase").on('click', function() {
+                $(".magnasonic").show();
+                $(".soundbase-product").hide();
+            });
+        });
+        /* to show projector (product) */
+        $(".projector").on('click', function() {
+            $(".projector-product").removeAttr("style");
+            $(".magnasonic").hide();
+            /* go-back-to-magnasonic-from-projector*/
+            $(".go-back-to-magnasonic-from-projector").on('click', function() {
+                $(".magnasonic").show();
+                $(".projector-product").hide();
+            });
+        });
+    }
+);
+</script>
+<script>
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("mybar-container");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width =  + "%";
+      }
+    }
+  }
+}
+</script>
+<style>
+.magnasonic-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+}
+
+.modal-popup .modal-inner-wrap {
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 100%;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.addtocart {
+    margin-top: 10px;
+}
+
+.discover {
+    margin-right: 10px;
+}
+
+.bt-action {
+    background-color: pink;
+    background-image: linear-gradient(to right, #FF6480, #F22E63);
+    padding: 5px 31px;
+}
+
+.bt-action:active {
+    text-decoration: none;
+}
+
+.bt-action-file {
+    position: relative;
+}
+
+/* 
+button {
+	background: none;
+    border-radius: 42%;
+    border: 1px solid black;
+    color: black;
+    width: 136px;
+} */
+.btn{
+    background: none;
+    border-radius: 42%;
+    border: 1px solid black;
+    color: black;
+    width: 136px;
+}
+
+.btn:hover {
+	background: none;
+    border-radius: 42%;
+    border: 1px solid black;
+    color: black;
+    width: 136px;
+}
+
+.btn:active {
+	background: none;
+    border-radius: 42%;
+    border: 1px solid black;
+    color: black;
+    width: 136px;
+}
+/* back button */
+.back {
+    position: absolute;
+    top: -49px;
+}
+
+.clock-radio-subdiv-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+/*     height: 400px; */
+}
+
+.simple-subdiv-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+}
+
+/* product img */
+span.img {
+    display: flow-root;
+    max-width: 225px;
+    margin: auto;
+}
+
+/* p tag display message in pdp */
+.done {
+    display: flex;
+    margin: auto;
+    max-width: 330px;
+    padding-bottom: 25px;
+}
+
+/* product description */
+.prod-description {
+    display: flex;
+    align-items: baseline;
+    justify-content: start;
+    height: 400px;
+    flex-direction: column;
+    margin: auto;
+    max-width: 207px;
+}
+
+/* back button only for product */
+.back-product {
+    position: absolute;
+    top: -29px;
+    left: 3px;
+}
+
+.advanced-subdiv-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+}
+
+.no-usb-charging-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+}
+
+.projection-aux-no-usb-charging-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+}
+
+.yes-usb-charging-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+}
+
+.yes-usb-charging-ab-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+}
+
+.display-color-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+}
+
+.bluetooth-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+}
+
+.bluetooth-ab-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+}
+
+.bluetooth-ab-no-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+}
+
+.display-color-am-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+}
+
+.addtocart {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 300px;
+    margin: auto;
+}
+
+.btnsubmmit {
+    color: white !important;
+    background-image: linear-gradient(to right, #FF6480, #F22E63);
+    padding: 6px;
+    margin-right: 10px;
+}
+
+.btnsubmmit:active {
+    text-decoration: none;
+}
+
+.hello {
+    width: 100%;
+}
+
+/* .progress-bar{
+	position:absolute;
+	top: -62px;
+} */
+#myProgress-comtainer {
+    width: 35%;
+    /* margin: auto; */
+    /* max-width: 365px; */
+    background-color: #ddd;
+    position: absolute;
+    top: -17px;
+    left: 410px;
+    height: 22px;
+    border-radius: 25px;
+	box-shadow: 0px -1px #888888;
+}
+
+#mybar-container {
+    width: 1%;
+    background-color: #8ed753;
+    /* max-width: 1240px; */
+    /* margin: auto; */
+    height: 22px;
+    border-radius: 25px;
+	
+}
+.projection-bluetooth-usb {
+    padding-top: 35px;
+}
+.myprogress-product {
+    width: 40%;
+    /* margin: auto; */
+    /* max-width: 365px; */
+    background-color: #abb2bc;
+    position: absolute;
+    top: 3px;
+    left: 377px;
+    height: 22px;
+    border-radius: 25px;
+	box-shadow: 0px -1px #888888;
+}
+.animationStripes{
+width: 300px;
+  height: 50px;
+  /* background-image: repeating-linear-gradient(-45deg, #8ed753, #8ed753 25px,  #99da58 25px, #99da58 50px); */
+  background-image: repeating-linear-gradient(
+-45deg, #8ed753, #8ed753 13px, #99da58 6px, #99da58 25px);
+}
+
+.clock-radio-subdiv-content-img{
+	display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 125px;
+}
+.shop-now{
+    border-radius: 25px;
+} 
+.shop-now:hover{
+    border-radius: 25px;
+} 
+.shop-now:active{
+    border-radius: 25px;
+} 
+.image{
+    width:150px;
+    height:150px;
+}
+.title{
+    padding-left:30px;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
