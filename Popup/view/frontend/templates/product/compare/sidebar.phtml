@@ -4,8 +4,12 @@
  * See COPYING.txt for license details.
  */
 ?>
+
 <body>
+
     <p>To Know More About!</p>
+
+
     <a href="javascript:;" class="bt-action " data="More Info">Magnasonic</a>
     <div class="bt-action-file" style="display: none;">
         <section class="progress-bar-wrapper">
@@ -15,9 +19,9 @@
                 </div>
             </div>
         </section>
-        <div class="temporary-image" style="display:none;">
+        <div class="add-image" style="display:none;">
         </div>
-        <div class="temporary" style="display:none;">
+        <div class="add-button" style="display:none;">
             <button class="btn temp" style="display:none;" id="linkid" value="-">
                 hello
             </button>
@@ -28,34 +32,80 @@
                 the best product for your need
             </h3>
             <div class="magnasonic-content">
-          
+
                 <div class="sound-base common">
-                    <img class="prod-image" style="margin:10px 0" src='<?= $this->getViewFileUrl('Tychons_Popup::images/Sound Base.jpeg'); ?>'>
+                    <img class="prod-image" style="margin:10px 0"
+                        src='<?= $this->getViewFileUrl('Tychons_Popup::images/Sound Base.jpeg'); ?>'>
                     <button class="sound-bases btn" value="Sound Base">Sound Base</button>
                 </div>
                 <div class="projector common">
-                    <img class= "prod-image" style="margin:10px 0" src='<?= $this->getViewFileUrl('Tychons_Popup::images/projector.jpg'); ?>'>
+                    <img class="prod-image" style="margin:10px 0"
+                        src='<?= $this->getViewFileUrl('Tychons_Popup::images/projector.jpg'); ?>'>
                     <button class="projector btn" value="Projector">Projector</button>
                 </div>
                 <div class="jewelry-cleaner common">
-                    <img class= "prod-image" style="margin:10px 0" src='<?= $this->getViewFileUrl('Tychons_Popup::images/jwellery-cleaner.jpg'); ?>'>
+                    <img class="prod-image" style="margin:10px 0"
+                        src='<?= $this->getViewFileUrl('Tychons_Popup::images/jwellery-cleaner.jpg'); ?>'>
                     <button class="btn" value="Jewelry Cleaner">Jewelry Cleaner</button>
                 </div>
                 <div class="flim-scanner common">
-                    <img class= "prod-image" style="margin:10px 0" src='<?= $this->getViewFileUrl('Tychons_Popup::images/Film-Scaner.jpg'); ?>'>
+                    <img class="prod-image" style="margin:10px 0"
+                        src='<?= $this->getViewFileUrl('Tychons_Popup::images/Film-Scaner.jpg'); ?>'>
                     <button class="btn" value="Flim Scanner">Flim Scanner</button>
                 </div>
                 <div class="clock-radio common">
-                    <img class= "prod-image" style="margin:10px 0" src='<?= $this->getViewFileUrl('Tychons_Popup::images/clock.jpg'); ?>'>
+                    <img class="prod-image" style="margin:10px 0"
+                        src='<?= $this->getViewFileUrl('Tychons_Popup::images/clock.jpg'); ?>'>
                     <button class="btn clock-radio" value="Clock-Radio">Clock/Radio</button>
                 </div>
             </div>
         </div>
 
-        <iframe src="blank" id="iframe" scrolling="no" height="700px" width="100%"  style="display:none;">
-        </iframe>
+        <!-- <iframe src="blank" id="iframe" scrolling="no" height="700px" width="100%" style="display:none;">
+        </iframe> -->
+        <div class="pdp" style="display:none;">
+            <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+            <span class="img yes-projection-clock">
+                <img   class="prod-image" src='<?= $this->getViewFileUrl('Tychons_Popup::images/fm_clock.jpg'); ?>'>
+            </span>
+            <div class="prod-description">
+                <h3 class="product-name"> Clock Radio</h3>
+                <div class="stocks-sku">
+                    <span class="stock">
+                        IN STOCK
+                    </span> |
+                    <span class="sku">
+                        XDC01
+                    </span>
+                </div>
+                <h6 class="product-review">Be the first to review this product</h6>
+
+                <h4 class="price">₹499.00</h4>
+                <p class="quantity">Quantity:</p>
+                <span>
+                    <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+                </span>
+                <div class="addtocart">
+                    <button class="discover" type="button">Discover</button>
+                    <?php
+                    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                    $customerSession = $objectManager->create('Magento\Customer\Model\Session');
+                    if ($customerSession->isLoggedIn()) {
+                        $customerSession->getCustomerId();  // get Customer Id
+                        $customerSession->getCustomerGroupId();
+                        $customerSession->getCustomer();
+                        $customerSession->getCustomerData();?>
+                        <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>aux-digital-clock.html"
+                        target="_blank">Add To Cart</a>
+                    <?php } else{?>
+                        <a href="customer/account/login/">Please Login</a><?php  }?>
+                </div>
+            </div>
+        </div>
     </div>
+
 </body>
+
 <script type="text/x-magento-init">
     {
         "*": {

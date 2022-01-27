@@ -61,17 +61,16 @@
             padding-bottom: 0px;
         }
         .modal-inner-wrap{
-        width: 100%;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        height: 100%;
+            width: 100%;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            height: 100%;
         }
-    }
-
-    .modal-content {
-        width: 100%;
-        max-width: 1240px;
-        margin: 0 auto;
+        .modal-content {
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
     }
 
     .bt-action {
@@ -132,23 +131,62 @@
         }
     }
 
-    .image{
+    .image-append{
         width: 200px;
         height: 200px;
     }
 
-    .temporary {
+    .add-button {
         display: flex;
         align-items: center;
         justify-content: space-around;
         height: 180px;
     }
 
-    .temporary-image {
+    .add-image {
         display: flex;
         align-items: center;
         justify-content: space-around;
         height: 300px;
+    
+    }
+    .done {
+        display: flex;
+        margin: auto;
+        max-width: 330px;
+        padding-bottom: 25px;
+    }
+    .prod-image {
+        display: flow-root;
+        max-width: 225px;
+        margin: auto;
+    }
+    .prod-description {
+        display: flex;
+        align-items: baseline;
+        justify-content: start;
+        height: 400px;
+        flex-direction: column;
+        margin: auto;
+        max-width: 207px;
+        .addtocart {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            max-width: 300px;
+            margin: auto;
+        }
+        .btnsubmmit {
+            color: white !important;
+            background-image: linear-gradient(to right, #FF6480, #F22E63);
+            padding: 6px;
+            margin-right: 10px;
+            &:active {
+                text-decoration: none;
+            } 
+        }
+        
     }
 
 }

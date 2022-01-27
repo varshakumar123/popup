@@ -15,15 +15,15 @@ require(
         };
         $("body").on("click", ".magnasonic-content div", function () {
             $('.magnasonic-content').hide();
-        });
+        }); 
         $(".bt-action").click(function () {
             $(".bt-action-file").modal(options).modal('openModal');
         });
         $("body").on("click", ".btn", function () {
             var value = $(this).val();
             $(".progress-bar-cointainer").removeAttr("style");
-            $(".temporary").removeAttr("style");
-            $(".temporary-image").removeAttr("style");
+            $(".add-button").removeAttr("style");
+            $(".add-image").removeAttr("style");
             $(".title").hide();
             var magnasonic0 = new Array("Sound Base", "SKU:SB41", "aux-digital-clock.html");
             var magnasonic1 = new Array("Projector", "SKU:PP60","projector.html");
@@ -62,8 +62,8 @@ require(
                               magnasonic22, magnasonic23, magnasonic24,magnasonic25, magnasonic26, magnasonic27, magnasonic28,magnasonic29, magnasonic30, magnasonic31];
             var arrayLength = array_list.length;
             
-            $(".temporary .btn").hide();
-            $(".temporary-image .image").hide();
+            $(".add-button .btn").hide();
+            $(".add-image .image").hide();
 
             /* looping for outer array (array_list) */
             for (var outer = 0; outer < arrayLength; outer++) {
@@ -74,12 +74,14 @@ require(
                     if (array_list[outer][inner] == value) {
                         /* to show iframe */
                         if (value.indexOf('SKU') == 0) {
-                            $(".temporary").hide();
-                            $(".temporary-image").hide();
-                            $("#iframe").attr('src', array_list[outer][inner + 1]).show().click();
+                            $(".add-button").hide();
+                            $(".add-image").hide();
+                            $(".pdp").removeAttr("style");
+                           // $("#iframe").attr('src', array_list[outer][inner + 1]).show().click();
+
                         }
-                        $(".temporary").append(`<button class="button-append btn" value=${array_list[outer][inner + 1]}>${array_list[outer][inner + 1]}</button>`);
-                        $(".temporary-image").append(`<img class="image" src=pub/media/wysiwyg/images/${array_list[outer][inner + 1]}.jpeg></img>`);
+                        $(".add-button").append(`<button class="button-append btn" value=${array_list[outer][inner + 1]}>${array_list[outer][inner + 1]}</button>`);
+                        $(".add-image").append(`<img class="image" src=pub/media/wysiwyg/images/${array_list[outer][inner + 1]}.jpeg></img>`);
                        /*  remove duplicate buttons and images */
                         var remove_duplicate = {};
                         $(".button-append").each(function () {
