@@ -63,47 +63,76 @@
 
         <!-- <iframe src="blank" id="iframe" scrolling="no" height="700px" width="100%" style="display:none;">
         </iframe> -->
-        <div class="pdp" style="display:none;">
-            <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
-            <span class="img yes-projection-clock">
-                <img   class="prod-image" src='<?= $this->getViewFileUrl('Tychons_Popup::images/fm_clock.jpg'); ?>'>
-            </span>
-            <div class="prod-description">
-                <h3 class="product-name"> Clock Radio</h3>
-                <div class="stocks-sku">
-                    <span class="stock">
-                        IN STOCK
-                    </span> |
-                    <span class="sku">
-                        XDC01
-                    </span>
-                </div>
-                <h6 class="product-review">Be the first to review this product</h6>
-
-                <h4 class="price">₹499.00</h4>
-                <p class="quantity">Quantity:</p>
-                <span>
-                    <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+        <div class="pdp" style="display:none;" >
+                <?php 
+                    use Magento\Framework\App\Action\Action; 
+                    $_productCollection = $block->getProductCollection();
+                ?>          
+                <?php 
+                    if (is_array($_productCollection) || is_object($_productCollection))
+                    {
+                ?>
+                <?php 
+                    foreach ($_productCollection as $_product): 
+                ?>
+                <?php 
+                    if ($_product->getName() == ?>
+                    <span>"Alarm Clock Digital FM Radio"</span> 
+                    <?php ): ?>
+                
+                <?php 
+                    $postParams = $block->getAddToCartPostParams($_product); 
+                ?>
+                <?php 
+                    echo $_product->getName();
+                ?>
+                <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+                <span class="img yes-projection-clock">
+                    <img class="prod-image" src=' <?php echo $_product->getImage();?>'>
                 </span>
-                <div class="addtocart">
-                    <button class="discover" type="button">Discover</button>
-                    <?php
-                    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-                    $customerSession = $objectManager->create('Magento\Customer\Model\Session');
-                    if ($customerSession->isLoggedIn()) {
-                        $customerSession->getCustomerId();  // get Customer Id
-                        $customerSession->getCustomerGroupId();
-                        $customerSession->getCustomer();
-                        $customerSession->getCustomerData();?>
-                        <a class="btnsubmmit" href=" <?php echo $block->getBaseUrl(); ?>aux-digital-clock.html"
-                        target="_blank">Add To Cart</a>
-                    <?php } else{?>
-                        <a href="customer/account/login/">Please Login</a><?php  }?>
-                </div>
+                <div class="prod-description">
+                    <h3 class="product-name">  <?php echo $_product->getName();?></h3>
+                    <div class="stocks-sku">
+                        <span class="stock">
+                            IN STOCK
+                        </span> |
+                        <span class="sku">
+                            <?php echo $_product->getSku();?>
+                        </span>
+                    </div>
+                    <h6 class="product-review">Be the first to review this product</h6>
+                    <h4 class="price"> <?php echo $_product->getPrice()?></h4>
+                    <p class="quantity">Quantity:</p>
+                    <span>
+                        <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+                    </span>
+                    <div class="addtocart">
+                        <button class="discover" type="button">Discover</button>
+                        <?php
+                            $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                            $customerSession = $objectManager->create('Magento\Customer\Model\Session');
+                            if ($customerSession->isLoggedIn()) {
+                                $customerSession->getCustomerId();  // get Customer Id
+                                $customerSession->getCustomerGroupId();
+                                $customerSession->getCustomer();
+                                $customerSession->getCustomerData();
+                        ?>
+                                <form data-role="tocart-form" action="<?php /* @escapeNotVerified */ echo $postParams['action']; ?>"method="post">
+                                    <?php echo $block->getBlockHtml('formkey')?>
+                                    <?php $storeManager = \Magento\Framework\App\ObjectManager::getInstance()->get('Magento\Store\Model\StoreManagerInterface'); ?>
+                                    <button type="submit" title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
+                                        class="action tocart primary">
+                                        <span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+                                    </button>
+                                </form>
+                            <?php } else{?>
+                                    <a href="customer/account/login/">Please Login</a><?php  }?>
+                <?php endif; 
+                endforeach;}?>
+                 </div>
             </div>
         </div>
     </div>
-
 </body>
 
 <script type="text/x-magento-init">
