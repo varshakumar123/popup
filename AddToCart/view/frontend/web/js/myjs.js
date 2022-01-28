@@ -14,7 +14,7 @@ require(
             buttons: []
         };
         $("body").on("click", ".magnasonic-content div", function () {
-            alert("hello");
+           //alert("hello");
             $('.magnasonic-content').hide();
         }); 
         $(".bt-action").click(function () {
@@ -57,7 +57,7 @@ require(
             var magnasonic28 = new Array("Clock-Radio", "Advanced", "USB-YES", "USB-C-PROJ-YES", "BL-NO", "AB-BL-YES", "SKU:CR-64","digital-clock-bluetooth.html");
             var magnasonic29 = new Array("Clock-Radio", "Advanced", "USB-YES", "USB-C-PROJ-YES", "BL-NO", "AB-BL-NO", "FM-Only", "SKU:CR-20","simple-radio.html");
             var magnasonic30 = new Array("Clock-Radio", "Advanced", "USB-YES", "USB-C-PROJ-YES", "BL-NO", "AB-BL-NO", "AM-FM", "WHITE", "SKU:EAAC-475W","alarm-clock-digital-fm-radio.html");
-            var magnasonic31 = new Array("Clock-Radio", "Advanced", "USB-YES", "USB-C-PROJ-YES", "BL-NO", "AB-BL-NO", "AM-FM", "BLUE", "SKU:EAAC-475","aux-digital-clock.html");
+            var magnasonic31 = new Array("Clock-Radio", "Advanced", "USB-YES", "USB-C-PROJ-YES", "BL-NO", "AB-BL-NO", "AM-FM", "BLUE", "SKU:EAAC-475W","aux-digital-clock.html");
             var array_list = [magnasonic0, magnasonic1,magnasonic2, magnasonic3, magnasonic4, magnasonic5, magnasonic6, magnasonic7, magnasonic8, magnasonic9, magnasonic10, 
                               magnasonic11, magnasonic12,magnasonic13, magnasonic14, magnasonic15, magnasonic16,magnasonic17, magnasonic18, magnasonic19, magnasonic20,magnasonic21, 
                               magnasonic22, magnasonic23, magnasonic24,magnasonic25, magnasonic26, magnasonic27, magnasonic28,magnasonic29, magnasonic30, magnasonic31];
@@ -78,6 +78,19 @@ require(
                             $(".add-button").hide();
                             $(".add-image").hide();
                             $(".pdp").removeAttr("style");
+                            
+                           // var sku = $('.prodsku').text();
+                            var ret = array_list[outer][inner].replace('SKU:','');
+                            var sku = $('.sku').text(ret);
+                            $(".pdp").removeAttr("style");
+                           /*  if( sku == ret)
+                            {
+                                alert("sku="=sku);
+                                alert("ret="+ret);
+                            } */
+                                 
+                           
+                            
                            // $("#iframe").attr('src', array_list[outer][inner + 1]).show().click();
 
                         }

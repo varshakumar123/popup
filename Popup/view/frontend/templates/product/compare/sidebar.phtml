@@ -75,11 +75,9 @@
                 <?php 
                     foreach ($_productCollection as $_product): 
                 ?>
-                <?php 
-                    if ($_product->getName() == ?>
-                    <span>"Alarm Clock Digital FM Radio"</span> 
-                    <?php ): ?>
-                
+               <?php 
+                    if ($_product->getName() == "Alarm Clock Digital FM Radio" ): 
+                ?>
                 <?php 
                     $postParams = $block->getAddToCartPostParams($_product); 
                 ?>

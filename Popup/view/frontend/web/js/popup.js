@@ -77,6 +77,7 @@ require(
                             $(".add-button").hide();
                             $(".add-image").hide();
                             $(".pdp").removeAttr("style");
+                           
                            // $("#iframe").attr('src', array_list[outer][inner + 1]).show().click();
 
                         }

@@ -18,7 +18,7 @@ class Display extends \Magento\Framework\App\Action\Action
 	{ 
 		return $this->_pageFactory->create();
 	}
-	public function getProductCollections()
+	public function getProductCollection()
 	{
 		/** @var $collection \Magento\Catalog\Model\ResourceModel\Product\Collection */
 	   $collection = $this->_productCollectionFactory->create()->addAttributeToSelect('*')->load();

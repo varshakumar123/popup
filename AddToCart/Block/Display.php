@@ -19,6 +19,9 @@ public function getProductCollection()
    $collection = $this->_productCollectionFactory->create()->addAttributeToSelect('*')->load();
     return $collection;
 }
+
+
+
 public function getAddToCartPostParams($product)
 {
     return $this->listProductBlock->getAddToCartPostParams($product);
