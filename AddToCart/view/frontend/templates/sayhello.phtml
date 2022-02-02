@@ -60,57 +60,105 @@
                 </div>
             </div>
 
-           
- 
 
-        <!-- <iframe src="blank" id="iframe" scrolling="no" height="700px" width="100%" style="display:none;">
+
+
+            <!-- <iframe src="blank" id="iframe" scrolling="no" height="700px" width="100%" style="display:none;">
         </iframe> -->
-        
-        <div class="pdp" style="display:none;">
-            <?php 
-                    use Magento\Framework\App\Action\Action; 
-                    $_productCollection = $block->getProductCollection();
-                ?>
-            <?php 
-                if (is_array($_productCollection) || is_object($_productCollection))
-                {
-                    ?>
-                    <?php 
-                        foreach ($_productCollection as $_product): 
-                    ?>
-                    <?php 
-                        echo "sku from collection=".$_product->getSku()."<br>";
-                        $a="<span class='sku'></span>" ; 
-                        echo "sku=".$a."<br>";
-                        
-                        if ($_product->getSku() == $a){
-                    ?>
-                    <?php 
-                        $postParams = $block->getAddToCartPostParams($_product); 
-                    ?>
-                    <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
-                    <span class="img yes-projection-clock">
-                        <img class="prod-image" src=' <?php echo $_product->getImage();?>'>
-                    </span>
-                    <div class="prod-description">
-                        <h3 class="product-name"> <?php echo $_product->getName();?></h3>
-                        <div class="stocks-sku">
-                            <span class="stock">
-                                IN STOCK
-                            </span> |
-                            <span class="sku">
-                                <?php echo $_product->getSku();?>
-                            </span>
-                        </div>
-                        <h6 class="product-review">Be the first to review this product</h6>
-                        <h4 class="price"> <?php echo $_product->getPrice()?></h4>
-                        <p class="quantity">Quantity:</p>
-                        <span>
-                            <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+
+            <div class="pdp" style="display:none;">
+                from array <span class="sku"></span> /
+           
+            </div>
+
+                <script >
+                     var ret = array_list[outer][inner].replace('SKU:','');
+                     //var prod_sku = $('.sku').text(ret);
+               </script>
+                    <div id="popup-ko-example" data-bind="scope:'popup-ko-example'"> 
+                        <!-- ko template: getTemplate() --><!-- /ko -->
+                        <script type="text/x-magento-init">
+                            {
+                                "*": {
+                                   "Magento_Ui/js/core/app": {
+                                        "components": {
+                                            "popup-ko-example": {
+                                                "component": "Tychons_AddToCart/js/myjs"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        </script>
+                    </div>
+                   <!--  <div data-bind='text: popup'></div> -->
+                <?php 
+              /*  $zz= $block->getaddtocart('<span class="sku"></span>');
+               echo $zz; */
+
+              // $content="<span class='sku'></span>";
+              // echo "hellooo". $new_string = preg_replace('/<span[^>]+\>/i', '!', $content); 
+
+               //$qq= "<script>document.write(ret);</script>";
+              // echo $qq;
+
+               //$html = preg_replace('<script>document.write(ret);</script>#is', '',$html);
+              // echo "html".$html;
+
+
+              //$textBox1=$block->getaddtocart('<span class="sku"></span>');
+              //$returnData = array('success' => FALSE, 'textBox1' => $textBox1);
+              //echo json_encode($returnData);
+
+               $pidd= $block->getaddtocarts();
+             
+              // echo $pidd;
+              $sku="CR-63";
+            //$skuu= "<script> $('.sku').text()</script>";
+            //$sku=$_REQUEST["value"];
+           // $sku ='<span class="sku"></span>';
+           // $skuu=$sku;
+           // echo $skuu; 
+           $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
+            $productRepository = $objectManager->get('\Magento\Catalog\Model\ProductRepository');
+           // $product = $productRepository->get("<div data-bind='text: textBox1'></div>");
+            // $productid = $product->getId();
+            $product=$productRepository->getById($pidd);
+            $productid = $product->getId();
+            //$product=$productRepository->getById($productid);
+            //$cartHelper = $this->helper('Magento\Checkout\Helper\Cart');
+            //$addToCartUrl = $cartHelper->getAddUrl($product);
+            $listBlock = $objectManager->get('\Magento\Catalog\Block\Product\ListProduct');
+            $addToCartUrl =  $listBlock->getAddToCartUrl($product);
+            $postDataHelper = $this->helper('Magento\Framework\Data\Helper\PostHelper');
+            $postData = $postDataHelper->getPostData($block->getAddToCartUrl($product), ['product' => $productid]);
+        ?>
+  
+         
+                                     
+                <p class="done">YOU JUST FOUND WHAT YOU WERE LOOKING FOR!</p>
+                <span class="img yes-projection-clock">
+                    <img class="prod-image" src=' <?php echo $product->getImage();?>'>
+                </span>
+                <div class="prod-description">
+                    <h3 class="product-name"> <?php echo $product->getName();?></h3>
+                    <div class="stocks-sku">
+                        <span class="stock">
+                            IN STOCK
+                        </span> |
+                        <span class="sku">
+                            <?php echo $product->getSku();?>
                         </span>
-                        <div class="addtocart">
-                            <button class="discover" type="button">Discover</button>
-                            <?php
+                    </div>
+                    <h6 class="product-review">Be the first to review this product</h6>
+                    <h4 class="price"> <?php echo $product->getPrice()?></h4>
+                    <p class="quantity">Quantity:</p>
+                    <span>
+                        <input style="width:40px ; height:40px" class="qty" type="number" value="1" min="1" max="5">
+                    </span>
+                    <div class="addtocart">
+                        <button class="discover" type="button">Discover</button>
+                        <?php
                                     $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
                                     $customerSession = $objectManager->create('Magento\Customer\Model\Session');
                                     if ($customerSession->isLoggedIn()) {
@@ -118,26 +166,25 @@
                                         $customerSession->getCustomerGroupId();
                                         $customerSession->getCustomer();
                                         $customerSession->getCustomerData();
-                                ?>
-                            <form data-role="tocart-form" action="<?php /* @escapeNotVerified */ echo $postParams['action']; ?>"
-                                method="post">
-                                <?php echo $block->getBlockHtml('formkey')?>
-                                <?php $storeManager = \Magento\Framework\App\ObjectManager::getInstance()->get('Magento\Store\Model\StoreManagerInterface'); ?>
-                                <button type="submit" title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
-                                    class="action tocart primary">
-                                    <span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+                                       
+                                        ?>
+                        <form data-role="tocart-form" action="<?php echo $addToCartUrl; ?>" method="post">
+                            <?php echo $block->getBlockHtml('formkey')?>
+                            <div class="btn">
+                                <button type="submit" title="Add to Cart" class="action tocart primary">
+                                    <span>Add to Cart</span>
                                 </button>
-                            </form>
-                            <?php } else{?>
-                            <a href="customer/account/login/">Please Login</a><?php  }?>
-                            <?php  }
-                   
-                    
-                endforeach;}?>
+                            </div>
+                        </form><?php
+                        } else{?>
+                        <a href="customer/account/login/">Please Login</a>
+                        <?php 
+                         }?>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 <script type="text/x-magento-init">
